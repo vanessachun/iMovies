@@ -1,0 +1,73 @@
+﻿@page "/Data/Movie"
+
+@using iMoviesLibrary
+@using iMoviesLibrary.Models
+@using iMovies.Models
+
+@inject ImovieData  _db
+
+<center>
+    <img src="/favicon.ico" height="75" />
+    <h1>iMovies Library</h1>
+
+    <h4>Insert New Movie</h4>
+    <EditForm Model="@newMovie" OnValidSubmit="@InsertMovie">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <InputText id="Movie" @bind-Value="newMovie.Movie" />
+        <InputNumber id="Movie" @bind-Value="newMovie.Year" />
+        <InputText id="Movie" @bind-Value="newMovie.Summary" />
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </EditForm>
+</center>
+if (movies is null)
+{
+<p><em>Loading...</em></p>
+} else {
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Year</th>
+            <th>Length</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in movies)
+        {
+            <tr>
+                <td>@movie.Movie</td>
+                <td>@movie.Year</td>
+                <td>@movie.Summary</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+
+@code {
+    private List<movieModel> movies;
+    private DisplayMovieModel newMovie = new DisplayMovieModel();
+
+    protected override async Task OnInitializedAsync()
+    {
+        movies = await _db.GetMovie();
+    }
+
+    private async Task InsertMovie()
+    {
+        movieModel m = new movieModel
+        {
+            Movie = newMovie.Movie,
+            Year = newMovie.Year,
+            Summary = newMovie.Summary
+        };
+
+        await _db.InsertMovie(m);
+        movies.Add(m);
+        newMovie = new DisplayMovieModel();
+    }
+}
