@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iMovies", "iMovies\iMovies.csproj", "{B17752D6-A4A7-4B06-A1BD-1DDBD468E42E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iMovies", "iMovies\iMovies.csproj", "{B17752D6-A4A7-4B06-A1BD-1DDBD468E42E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iMoviesLibrary", "iMoviesLibrary\iMoviesLibrary.csproj", "{29C32ADF-9886-468F-AC69-E8C5E8C2CD36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B17752D6-A4A7-4B06-A1BD-1DDBD468E42E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B17752D6-A4A7-4B06-A1BD-1DDBD468E42E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B17752D6-A4A7-4B06-A1BD-1DDBD468E42E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C32ADF-9886-468F-AC69-E8C5E8C2CD36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C32ADF-9886-468F-AC69-E8C5E8C2CD36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C32ADF-9886-468F-AC69-E8C5E8C2CD36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C32ADF-9886-468F-AC69-E8C5E8C2CD36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
